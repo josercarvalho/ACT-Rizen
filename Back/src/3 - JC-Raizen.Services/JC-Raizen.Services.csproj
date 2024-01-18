@@ -8,17 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Services\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\2 - JC-Raizen.Domain\JC-Raizen.Domain.csproj" />
+    <ProjectReference Include="..\4 - JC-Raizen.Infra\JC-Raizen.Infra.csproj" />
   </ItemGroup>
 
 </Project>

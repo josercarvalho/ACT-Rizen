@@ -1,6 +1,6 @@
 ﻿namespace JC_Raizen.Domain.Entidades
 {
-    public class Cliente : Base
+    public class Cliente
     { 
         //EF
         protected Cliente() { }
@@ -14,10 +14,11 @@
         }
 
         //Propriedades
-        public string? Nome { get; private set; }
-        public string? Email { get; private set; }
-        public DateTime? DataNascimento { get; private set; }
-        public string? CEP { get; private set; }
+        public int Id { get; set; }
+        public string? Nome { get; set; }
+        public string? Email { get; set; }
+        public DateTime? DataNascimento { get; set; }
+        public string? CEP { get; set; }
 
     }
 }

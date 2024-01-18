@@ -14,6 +14,6 @@ namespace JC_Raizen.Services.DTO
 
         public DateTime? DataNascimento { get; set; }
         public string? CEP { get; set; }
-        public virtual EnderecoDTO? EnderecoDTO { get; set; }
+        //public virtual EnderecoDTO? EnderecoDTO { get; set; }
     }
 }

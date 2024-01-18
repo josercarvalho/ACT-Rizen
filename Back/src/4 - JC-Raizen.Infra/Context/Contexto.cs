@@ -6,11 +6,9 @@ namespace JC_Raizen.Infra.Context
 {
     public class Contexto : DbContext
     {
-        public Contexto() { }
-
         public Contexto(DbContextOptions<Contexto> options) : base(options) { }
 
-        public virtual DbSet<Cliente> Cliente { get; set; }
+        public virtual DbSet<Cliente> Clientes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

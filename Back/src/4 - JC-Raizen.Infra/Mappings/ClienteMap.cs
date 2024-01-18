@@ -24,7 +24,7 @@ namespace JC_Raizen.Infra.Mappings
 
             builder.Property(x => x.DataNascimento)
                 .IsRequired()
-                .HasColumnName("password")
+                .HasColumnName("datanascimento")
                 .HasColumnType("datetime2");
 
             builder.Property(x => x.Email)
