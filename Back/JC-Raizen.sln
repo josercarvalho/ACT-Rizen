@@ -5,21 +5,20 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F9E9C957-CCF7-43B8-A799-978BAD764A46}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JC-Raizen.API", "src\JC-Raizen.API\JC-Raizen.API.csproj", "{EC862988-3446-4896-BF85-FBDBD4B5BC02}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JC-Raizen.API", "src\1 - JC-Raizen.API\JC-Raizen.API.csproj", "{EC862988-3446-4896-BF85-FBDBD4B5BC02}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JC-Raizen.Domain", "src\JC-Raizen.Domain\JC-Raizen.Domain.csproj", "{13E3FD4E-E934-4835-870E-C9F87D3EF60D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JC-Raizen.Domain", "src\2 - JC-Raizen.Domain\JC-Raizen.Domain.csproj", "{13E3FD4E-E934-4835-870E-C9F87D3EF60D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JC-Raizen.Services", "src\JC-Raizen.Services\JC-Raizen.Services.csproj", "{A558AFA2-A29F-4853-8932-7E1C07347418}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JC-Raizen.Services", "src\3 - JC-Raizen.Services\JC-Raizen.Services.csproj", "{A558AFA2-A29F-4853-8932-7E1C07347418}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JC-Raizen.Infra", "src\JC-Raizen.Infra\JC-Raizen.Infra.csproj", "{2D780526-A987-4D08-8FE9-E7182F14DE77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JC-Raizen.Infra", "src\4 - JC-Raizen.Infra\JC-Raizen.Infra.csproj", "{2D780526-A987-4D08-8FE9-E7182F14DE77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JC-Raizen.Core", "src\JC-Raizen.Core\JC-Raizen.Core.csproj", "{198FFE7F-E115-4C12-9D69-D709D2AF625D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{EC862988-3446-4896-BF85-FBDBD4B5BC02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -38,11 +37,19 @@ Global
 		{2D780526-A987-4D08-8FE9-E7182F14DE77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D780526-A987-4D08-8FE9-E7182F14DE77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D780526-A987-4D08-8FE9-E7182F14DE77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{198FFE7F-E115-4C12-9D69-D709D2AF625D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{198FFE7F-E115-4C12-9D69-D709D2AF625D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{198FFE7F-E115-4C12-9D69-D709D2AF625D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{198FFE7F-E115-4C12-9D69-D709D2AF625D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{EC862988-3446-4896-BF85-FBDBD4B5BC02} = {F9E9C957-CCF7-43B8-A799-978BAD764A46}
 		{13E3FD4E-E934-4835-870E-C9F87D3EF60D} = {F9E9C957-CCF7-43B8-A799-978BAD764A46}
 		{A558AFA2-A29F-4853-8932-7E1C07347418} = {F9E9C957-CCF7-43B8-A799-978BAD764A46}
 		{2D780526-A987-4D08-8FE9-E7182F14DE77} = {F9E9C957-CCF7-43B8-A799-978BAD764A46}
+		{198FFE7F-E115-4C12-9D69-D709D2AF625D} = {F9E9C957-CCF7-43B8-A799-978BAD764A46}
 	EndGlobalSection
 EndGlobal
