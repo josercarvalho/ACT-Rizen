@@ -1,0 +1,92 @@
+<mat-card>
+  <h1>{{btnTitulo}}</h1>
+
+  <form [formGroup]="clienteForm" (ngSubmit)="submit()" #formDir="ngForm">
+    <input type="hidden" value="" formControlName="id">
+
+    <div class="input-box">
+      <mat-form-field>
+        <mat-label>Nome:</mat-label>
+        <input matInput id="nome" type="text" class="form-control text-dark" formControlName="nome"
+          placeholder="Insira o nome!" required>
+      </mat-form-field>
+    </div>
+
+    <div class="input-box">
+      <mat-form-field>
+        <mat-label>E-mail:</mat-label>
+        <input matInput id="email" type="text" class="form-control  text-dark" formControlName="email"
+          placeholder="Insira o email!" required>
+      </mat-form-field>
+    </div>
+
+    <div class="input-box">
+      <mat-form-field>
+        <mat-label>Data de Nacimento:</mat-label>
+        <input matInput id="dataNascimento" type="text" class="form-control  text-dark" formControlName="dataNascimento"
+          placeholder="Insira data de nascimento no formato 99/99/9999!" required>
+      </mat-form-field>
+    </div>
+
+    <div class="input-box">
+      <mat-form-field>
+        <mat-label>CEP:</mat-label>
+        <input matInput id="cep"
+                        type="text"
+                        class="form-control  text-dark"
+                        formControlName="cep"
+                        [formControl]="cepField"
+                        mask="00000-000"
+                        (blur)="BuscarCep()"
+          placeholder="Insira o CEP!"  required>
+      </mat-form-field>
+    </div>
+
+    <div class="input-box">
+      <mat-form-field>
+        <mat-label>Endereço:</mat-label>
+        <input matInput id="logradouro" type="text" class="form-control  text-dark" formControlName="logradouro"
+          placeholder="Insira o endereço completo!" required>
+      </mat-form-field>
+    </div>
+
+    <div class="input-box">
+      <mat-form-field>
+        <mat-label>Complemento:</mat-label>
+        <input matInput id="complemento" type="text" class="form-control  text-dark" formControlName="complemento"
+          placeholder="Insira o complemento do endereço!">
+      </mat-form-field>
+    </div>
+
+    <div class="input-box">
+      <mat-form-field>
+        <mat-label>Bairro:</mat-label>
+        <input matInput id="bairro" type="text" class="form-control  text-dark" formControlName="bairro"
+          placeholder="Insira o bairro do endereço!" required>
+      </mat-form-field>
+    </div>
+
+    <div class="input-box">
+      <mat-form-field>
+        <mat-label>Cidade:</mat-label>
+        <input matInput id="localidade" type="text" class="form-control  text-dark" formControlName="localidade"
+          placeholder="Insira o cidade/localidade de endereço!" required>
+      </mat-form-field>
+    </div>
+
+    <div class="input-box">
+      <mat-form-field>
+        <mat-label>UF:</mat-label>
+        <input matInput id="uf" type="text" class="form-control  text-dark" formControlName="uf"
+          placeholder="Insira o estado!" required>
+      </mat-form-field>
+    </div>
+
+    <div class="btn-box">
+      <button type="submit" class="btn btn-success w-50" [disabled]="!clienteForm.valid" mat-raised-button color="accent">{{btnAcao}}</button>
+      <button class="btn btn-primary w-50" routerLink="" mat-raised-button>Voltar</button>
+    </div>
+
+  </form>
+
+</mat-card>

@@ -1,0 +1,78 @@
+<mat-card>
+
+  <div>
+    <h1 class="text-light">Detalhes do Cliente</h1>
+  </div>
+
+  <div *ngIf="cliente">
+
+    <form>
+      <div class="input-box">
+        <mat-form-field>
+          <mat-label>Nome:</mat-label>
+          <input matInput matInput type="text" class="form-control text-dark" value="{{cliente.nome}}" disabled>
+        </mat-form-field>
+      </div>
+
+      <div class="input-box">
+        <mat-form-field>
+          <mat-label>E-mail:</mat-label>
+          <input matInput type="text" class="form-control  text-dark" value="{{cliente.email}}" disabled>
+        </mat-form-field>
+      </div>
+
+      <div class="input-box">
+        <mat-form-field>
+          <mat-label>Data de Nascimento:</mat-label>
+          <input matInput type="text" class="form-control  text-dark" value="{{cliente.dataNascimento}}" disabled>
+        </mat-form-field>
+      </div>
+
+      <div class="input-box">
+        <mat-form-field>
+          <mat-label>CEP:</mat-label>
+          <input matInput type="text" class="form-control  text-dark" value="{{cliente.cep}}" disabled>
+        </mat-form-field>
+      </div>
+
+      <div class="input-box">
+        <mat-form-field>
+          <mat-label>Endereço:</mat-label>
+          <input matInput type="text" class="form-control  text-dark" value="{{cliente.logradouro}}" disabled>
+        </mat-form-field>
+      </div>
+
+      <div class="input-box">
+        <mat-form-field>
+          <mat-label>Complemento:</mat-label>
+          <input matInput type="text" class="form-control  text-dark" value="{{cliente.complemento}}" disabled>
+        </mat-form-field>
+      </div>
+
+      <div class="input-box">
+        <mat-form-field>
+          <mat-label>Bairro:</mat-label>
+          <input matInput type="text" class="form-control  text-dark" value="{{cliente.bairro}}" disabled>
+        </mat-form-field>
+      </div>
+
+      <div class="input-box">
+        <mat-form-field>
+          <mat-label>Localidade:</mat-label>
+          <input matInput type="text" class="form-control  text-dark" value="{{cliente.localidade}}" disabled>
+        </mat-form-field>
+      </div>
+
+      <div class="input-box">
+        <mat-form-field>
+          <mat-label>UF:</mat-label>
+          <input matInput type="text" class="form-control  text-dark" value="{{cliente.uf}}" disabled>
+        </mat-form-field>
+      </div>
+
+      <div class="btn-box">
+        <a routerLink="" mat-raised-button>Voltar</a>
+      </div>
+    </form>
+  </div>
+</mat-card>

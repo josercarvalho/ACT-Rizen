@@ -13,7 +13,11 @@ namespace JC_Raizen.Services.DTO
         public string? Email { get; set; }
 
         public DateTime? DataNascimento { get; set; }
-        public string? CEP { get; set; }
-        //public virtual EnderecoDTO? EnderecoDTO { get; set; }
+        public string? cep { get; set; }
+        public string? logradouro { get; set; }
+        public string? complemento { get; set; }
+        public string? bairro { get; set; }
+        public string? localidade { get; set; }
+        public string? uf { get; set; }
     }
 }

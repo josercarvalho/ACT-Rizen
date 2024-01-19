@@ -33,11 +33,42 @@ namespace JC_Raizen.Infra.Mappings
                 .HasColumnName("email")
                 .HasColumnType("VARCHAR(180)");
 
-            builder.Property(x => x.CEP)
+            builder.Property(x => x.cep)
                 .IsRequired()
                 .HasMaxLength(8)
                 .HasColumnName("cep")
                 .HasColumnType("VARCHAR(8)");
+
+            builder.Property(x => x.logradouro)
+                .IsRequired()
+                .HasMaxLength(200)
+                .HasColumnName("logradouro")
+                .HasColumnType("VARCHAR(200)");
+
+            builder.Property(x => x.complemento)
+                .IsRequired()
+                .HasMaxLength(180)
+                .HasColumnName("complemento")
+                .HasColumnType("VARCHAR(180)");
+
+            builder.Property(x => x.bairro)
+                .IsRequired()
+                .HasMaxLength(80)
+                .HasColumnName("bairro")
+                .HasColumnType("VARCHAR(80)");
+
+            builder.Property(x => x.localidade)
+                .IsRequired()
+                .HasMaxLength(80)
+                .HasColumnName("localidade")
+                .HasColumnType("VARCHAR(80)");
+
+            builder.Property(x => x.uf)
+                .IsRequired()
+                .HasMaxLength(2)
+                .HasColumnName("uf")
+                .HasColumnType("VARCHAR(2)");
+
         }
     }
 }

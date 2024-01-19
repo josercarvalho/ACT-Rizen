@@ -5,6 +5,8 @@ using System.Net;
 
 namespace JC_Raizen.API.Controllers
 {
+    [Route("api/[controller]")]
+    [ApiController]
     public class EnderecoController : Controller
     {
         private readonly IViaCepApi _viaCepApi;
@@ -15,7 +17,7 @@ namespace JC_Raizen.API.Controllers
         }
 
         [HttpGet("{codigoCep}")]
-        public async Task<IActionResult> BuscarTabela([RegularExpression("^[0-9]*$")] string codigoCep)
+        public async Task<IActionResult> BuscarCep([RegularExpression("^[0-9]*$")] string codigoCep)
         {
             try
             {

@@ -5,12 +5,17 @@
         //EF
         protected Cliente() { }
 
-        public Cliente(string nome, string email, DateTime dataNascimento, string cEP)
+        public Cliente(string nome, string email, DateTime dataNascimento, string cEP, string? logradouro, string? complemento, string? bairro, string? localidade, string? uf)
         {
             Nome = nome;
             Email = email;
             DataNascimento = dataNascimento;
-            CEP = cEP;
+            cep = cEP;
+            this.logradouro = logradouro;
+            this.complemento = complemento;
+            this.bairro = bairro;
+            this.localidade = localidade;
+            this.uf = uf;
         }
 
         //Propriedades
@@ -18,7 +23,12 @@
         public string? Nome { get; set; }
         public string? Email { get; set; }
         public DateTime? DataNascimento { get; set; }
-        public string? CEP { get; set; }
+        public string? cep { get; set; }
+        public string? logradouro { get; set; }
+        public string? complemento { get; set; }
+        public string? bairro { get; set; }
+        public string? localidade { get; set; }
+        public string? uf { get; set; }
 
     }
 }
