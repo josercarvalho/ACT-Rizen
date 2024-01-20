@@ -24,12 +24,12 @@ export class ClienteService {
     return this.http.get<Cliente>(`${this.apiUrl}/${id}`);
   }
 
-  CreateCliente(Cliente: Cliente) : Observable<Cliente> {
-    return this.http.post<Cliente>(`${this.apiUrl}`, Cliente);
+  CreateCliente(cliente: Cliente) : Observable<Cliente> {
+    return this.http.post<Cliente>(`${this.apiUrl}`, cliente);
   }
 
-  EditCliente(Cliente : Cliente) : Observable<Cliente[]> {
-      return this.http.put<Cliente[]>(`${this.apiUrl}`, Cliente);
+  EditCliente(cliente : Cliente) : Observable<Cliente> {
+      return this.http.put<Cliente>(`${this.apiUrl}`, cliente);
   }
 
   ExcluirCliente(id: number) : Observable<Cliente[]> {

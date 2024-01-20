@@ -47,14 +47,14 @@ export class ClienteFormComponent implements OnInit {
     this.clienteService.BuscaCep(value).subscribe((data) => {
       const dados = data;
 
-      console.log(dados);
+      let cep = dados.cep?.replace("-","")
 
       this.clienteForm = new FormGroup({
-        // id: new FormControl(this.dadosCliente ? this.dadosCliente.id : 0),
-        // nome: new FormControl(this.dadosCliente ? this.dadosCliente.nome : '', [Validators.required]),
-        // email: new FormControl(this.dadosCliente ? this.dadosCliente.email : '', [Validators.required]),
-        // dataNascimento: new FormControl(this.dadosCliente ? new Date(this.dadosCliente.dataNascimento).toLocaleDateString("pt-BR") : '', [Validators.required]),
-        // cep: new FormControl(this.dadosCliente ? this.dadosCliente.cep : '', [Validators.required]),
+        id: new FormControl(this.dadosCliente ? this.dadosCliente.id : 0),
+        nome: new FormControl(this.dadosCliente ? this.dadosCliente.nome : '', [Validators.required]),
+        email: new FormControl(this.dadosCliente ? this.dadosCliente.email : '', [Validators.required]),
+        dataNascimento: new FormControl(this.dadosCliente ? new Date(this.dadosCliente.dataNascimento).toLocaleDateString("pt-BR") : '', [Validators.required]),
+        cep: new FormControl(cep, [Validators.required]),
         logradouro: new FormControl(dados.logradouro, [Validators.required]),
         localidade: new FormControl(dados.localidade, [Validators.required]),
         bairro: new FormControl(dados.bairro, [Validators.required]),

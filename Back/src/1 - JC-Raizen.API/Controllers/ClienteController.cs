@@ -3,6 +3,8 @@ using JC_Raizen.Infra.Models;
 using JC_Raizen.Services.DTO;
 using JC_Raizen.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Globalization;
 
 namespace JC_Raizen.API.Controllers
 {
@@ -70,11 +72,13 @@ namespace JC_Raizen.API.Controllers
             }
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, ClienteDTO model)
+        [HttpPut]
+        public async Task<IActionResult> Put(ClienteDTO model)
         {
             try
             {
+                var id = model.Id;
+                model.DataNascimento = Convert.ToDateTime(model.DataNascimento, CultureInfo.InvariantCulture);
                 var cliente = await _clienteService.UpdateCliente(id, model);
                 if (cliente == null) return NoContent();
 
