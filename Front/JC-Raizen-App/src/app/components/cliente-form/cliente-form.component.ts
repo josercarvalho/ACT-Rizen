@@ -15,7 +15,7 @@ export class ClienteFormComponent implements OnInit {
   @Input() btnTitulo!: string;
   @Input() dadosCliente: Cliente | null = null;
 
-  cepField = new FormControl;
+  // cepField = new FormControl;
 
   clienteForm!: FormGroup;
 
@@ -42,26 +42,28 @@ export class ClienteFormComponent implements OnInit {
   }
 
   BuscarCep() {
-    let value = this.cepField.value;
+    let value = this.dadosCliente?.cep // this.cepField.value;
 
-    this.clienteService.BuscaCep(value).subscribe((data) => {
-      const dados = data;
+    if (value != null) {
+      this.clienteService.BuscaCep(value).subscribe((data) => {
+        const dados = data;
 
-      let cep = dados.cep?.replace("-","")
+        let cep = dados.cep?.replace("-", "")
 
-      this.clienteForm = new FormGroup({
-        id: new FormControl(this.dadosCliente ? this.dadosCliente.id : 0),
-        nome: new FormControl(this.dadosCliente ? this.dadosCliente.nome : '', [Validators.required]),
-        email: new FormControl(this.dadosCliente ? this.dadosCliente.email : '', [Validators.required]),
-        dataNascimento: new FormControl(this.dadosCliente ? new Date(this.dadosCliente.dataNascimento).toLocaleDateString("pt-BR") : '', [Validators.required]),
-        cep: new FormControl(cep, [Validators.required]),
-        logradouro: new FormControl(dados.logradouro, [Validators.required]),
-        localidade: new FormControl(dados.localidade, [Validators.required]),
-        bairro: new FormControl(dados.bairro, [Validators.required]),
-        complemento: new FormControl(dados.complemento),
-        uf: new FormControl(dados.uf, [Validators.required]),
-      })
-    });
+        this.clienteForm = new FormGroup({
+          id: new FormControl(this.dadosCliente ? this.dadosCliente.id : 0),
+          nome: new FormControl(this.dadosCliente ? this.dadosCliente.nome : '', [Validators.required]),
+          email: new FormControl(this.dadosCliente ? this.dadosCliente.email : '', [Validators.required]),
+          dataNascimento: new FormControl(this.dadosCliente ? new Date(this.dadosCliente.dataNascimento).toLocaleDateString("pt-BR") : '', [Validators.required]),
+          cep: new FormControl(cep, [Validators.required]),
+          logradouro: new FormControl(dados.logradouro, [Validators.required]),
+          localidade: new FormControl(dados.localidade, [Validators.required]),
+          bairro: new FormControl(dados.bairro, [Validators.required]),
+          complemento: new FormControl(dados.complemento),
+          uf: new FormControl(dados.uf, [Validators.required]),
+        })
+      });
+    }
   }
 
   submit() {
