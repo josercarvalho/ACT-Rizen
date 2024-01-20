@@ -4,10 +4,14 @@ import { Router } from '@angular/router';
 import { Cliente } from 'src/app/pages/models/Clientes';
 import { ClienteService } from 'src/app/services/cliente.service';
 
+import {MatButtonModule} from '@angular/material/button';
+
 @Component({
   selector: 'app-excluir',
   templateUrl: './excluir.component.html',
-  styleUrls: ['./excluir.component.css']
+  styleUrls: ['./excluir.component.css'],
+  standalone: true,
+  imports: [MatButtonModule],
 })
 export class ExcluirComponent implements OnInit{
 
@@ -20,7 +24,9 @@ export class ExcluirComponent implements OnInit{
       this.inputdata = this.data;
 
       this.clienteService.GetCliente(this.inputdata.id).subscribe(data => {
-          this.cliente = data;
+        const dados = data;
+        dados.dataNascimento = new Date(dados.dataNascimento!).toLocaleDateString("pt-BR");
+          this.cliente = dados;
       });
   }
 
