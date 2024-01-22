@@ -1,4 +1,4 @@
-<!-- <div *ngIf="cliente"> -->
+
   <h1 mat-dialog-title>Deseja confirmar a exclução?</h1>
   <div mat-dialog-content>
     <p style="font: bold;"><b>Cliente:</b></p>
@@ -9,6 +9,6 @@
 
   </div>
   <div mat-dialog-actions>
+    <button mat-button (click)="onVoltarClick()">Voltar</button>
     <button mat-button mat-raised-button color="warn" (click)="excluir()">Confirmar</button>
   </div>
-<!-- </div> -->

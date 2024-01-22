@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Cliente } from '../models/Clientes';
 import { ClienteService } from 'src/app/services/cliente.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-editar',
@@ -15,7 +16,11 @@ export class EditarComponent implements OnInit {
   btnTitulo = "Editar Cliente!";
   cliente!: Cliente;
 
-  constructor(private clienteService: ClienteService, private router: Router, private route: ActivatedRoute) {  }
+  constructor(
+    private clienteService: ClienteService,
+    private router: Router,
+    private route: ActivatedRoute,
+    public matSnackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
@@ -28,7 +33,10 @@ export class EditarComponent implements OnInit {
   async editCliente(cliente: Cliente) {
 
     this.clienteService.EditCliente(cliente).subscribe(data => {
+      this.matSnackBar.open("Salvo com sucesso!", "", {
+        duration: 5000
+      })
       this.router.navigate(['/']);
-    });
+    })
   }
 }

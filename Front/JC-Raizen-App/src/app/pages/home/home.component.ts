@@ -42,12 +42,16 @@ export class HomeComponent implements OnInit {
   }
 
   openDialog(id : number){
-    this.matDialog.open(ExcluirComponent,{
+    const dialogRef = this.matDialog.open(ExcluirComponent,{
       width: '350px',
       height: '350px',
       data: {
         id: id
       }
-    })
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+    });
   }
 }
